@@ -1,6 +1,7 @@
 const http = require('http');
 const express = require('express');
 const spawn = require("child_process").exec;
+const fs = require('fs');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -35,7 +36,7 @@ function runServer() {
 			});
 		}
 	
-		res.end("Enter something for me to say!");
+		res.render('pages/index');
 	});
 
 	// make the app listen for routes
@@ -45,10 +46,6 @@ function runServer() {
 	console.log('Running at Port 3000');
 
 	// res.end("Hello World");
-}
-
-function escapeQuotes(str) {
-	return str.replace(/"/g, '\\\"').replace(/'/g, '\\\'');
 }
 
 setTimeout(runServer,3000);

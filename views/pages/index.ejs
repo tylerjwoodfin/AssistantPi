@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Hi, what can I do for you?</h1>
+        <input type="text" id="test"  value="" />
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+// submit on enter
+$(document).ready(function() {
+  $("#test").keyup(function (event) {
+    if (event.keyCode == 13) {
+        alert(document.getElementById("test").value);
+    }
+  });
+});
+</script>
+
+<style>
+input {
+    width: 100%;
+}
+</style>
